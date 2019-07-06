@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Signup Page</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1>Welcome <%= user.email %></h1>
+    <p>Nice to see you again. Please remember that your secret identity
+    is <%- user.secret_identity %></p>
+
+    <form action="/users/delete_account" method="POST">
+      <input type="hidden" name="_csrf" value="<%= csrfToken %>" />
+      <button>Delete Account</button>
+    </form>
+
+  </body>
+</html>
+
+
+

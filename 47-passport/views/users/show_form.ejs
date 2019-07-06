@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Show User</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1>Type email/password to see the secret identity</h1>
+    <form method="GET" action="/users/show">
+      <input type="hidden" name="_csrf" value="<%= csrfToken %>" />
+      
+      <label>
+        Email:
+        <input type="email" name="user[email]" />
+      </label>
+
+      <input type="submit" value="Send" />
+    </form>
+
+
+  </body>
+</html>
+
+
+

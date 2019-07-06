@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1><%= title %></h1>
+    <% if (user) { %>
+      <p>Nice to see you: <%= user.email %></p>
+      <p>For more information you can always visit your
+      <a href="/users/<%= user.id %>">personal private homepage</a></p>
+      <form action="/sessions/logout" method="POST">
+      <input type="hidden" name="_csrf" value="<%= csrfToken %>" />
+        <input type="submit" value="Logout" />
+      </form>
+    <% } %>
+    <a href='/sessions/'>Login</a>
+  </body>
+</html>
